@@ -32,7 +32,7 @@
 
        </el-submenu>
         <el-menu-item index="5"> <router-link to="/experience/list" class="router_link">经验</router-link></el-menu-item>
-        <el-menu-item index="6"> <router-link to="/question" class="router_link">问答</router-link></el-menu-item>
+        <el-menu-item index="6"> <router-link to="/question/list" class="router_link">问答</router-link></el-menu-item>
         <el-input class="search" v-model="keyword"></el-input>
         <i><a class="el-icon-search" :href="'https://cse.google.com/cse?cx=014827600618892460546:uxl60a7owdw&q='+this.keyword"></a></i>
         <router-link  to="/login" ><el-button round type="primary">登录</el-button></router-link>
@@ -49,7 +49,7 @@ export default {
     return {
       activeIndex: '1',
       softwareType: ['Linux', 'Windows', 'Android', 'IOS', 'MAC'],
-      programType: ['C', 'C++', 'Java', 'Python', 'JavaScript', 'Go', ''],
+      programType: ['C', 'C++', 'Java', 'Python', 'JavaScript', 'Go'],
       opensourceType:['typeOne', 'typeTwo'],
       keyword: ''
     }

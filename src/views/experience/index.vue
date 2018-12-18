@@ -7,7 +7,7 @@
         <el-row v-for="(item,index) in list" :key="index+1">
           <el-card :body-style="{ padding: '0px' }">
             <div class="image-part">
-              <img :src="item.icon" class="image">
+              <!-- <img :src="item.icon" class="image"> -->
             </div>
             <div style="padding: 14px;" class="summary-part">
               <h5><router-link :to="'/experience/details/' + item.id">{{ item.title }}</router-link></h5>

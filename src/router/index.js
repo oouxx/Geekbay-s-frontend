@@ -11,6 +11,7 @@ import tagList from '../views/tag/index'
 import forgetPassword from '../views/forget-passwd/index'
 import searchResult from '../components/search/searchResult'
 import opensourceRouter from './opensource'
+import questionRouter from './question'
 import homeList from '../views/home/index'
 // 注册路由
 Vue.use(Router)
@@ -54,6 +55,7 @@ var router = new Router({
     programRouter,
     experienceRouter,
     opensourceRouter,
+    questionRouter,
     {
       path: '/search/:keyword',
       component: searchResult

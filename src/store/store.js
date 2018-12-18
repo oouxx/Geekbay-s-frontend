@@ -16,9 +16,10 @@ const userInfo = {
             name:cookie.getCookie('name')||'',
             token:cookie.getCookie('token')||''
         };
-
+const isLogined = 0
 const state = {
-    userInfo
+    userInfo,
+    isLogined
 }
 export default new Vuex.Store({
 	state,

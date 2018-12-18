@@ -20,10 +20,9 @@
 <script>
 import { fetchProgram } from '../../api/api'
 export default {
-  name: 'Program',
+  name: 'Index',
   data: function(){
     return {
-      title: 'title',
       list: null,
       programType: ''
     }
@@ -38,7 +37,7 @@ export default {
      $route(){
         this.programType = this.$route.params.type
       },
-      softwareType(){
+      programType(){
         this.Program(this.programType)
       }
   },

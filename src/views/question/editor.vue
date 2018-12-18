@@ -8,7 +8,7 @@
 
 <script>
 import Editor from '@toast-ui/vue-editor/src/Editor.vue' 
-import {uploadExperience} from '../../api/api'
+import {uploadQuestion} from '../../api/api'
 export default {
   name: 'Detail',
   data (){
@@ -23,11 +23,11 @@ export default {
   },
   methods: {
     upload: function(){
-      uploadExperience({
+      uploadQuestion({
           title: this.caption,
           description: this.detail
       }).then(reponse => {
-        this.$router.push({ path: '/experience/list' })
+        this.$router.push({ path: '/question/list' })
       }
       )
     }

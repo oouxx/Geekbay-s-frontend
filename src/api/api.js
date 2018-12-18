@@ -18,6 +18,7 @@ export const fetchProgram = params => {return axios.get(`${host}/program`, param
 export const Experience = params => {return axios.get(`${host}/experience`, params)}
 export const uploadExperience = params => {return axios.post(`${host}/experience/`, params)}
 export const Question = params => {return axios.get(`${host}/question`, params)}
+export const uploadQuestion = params => {return axios.post(`${host}/question/`, params)}
 // 获取开源讯息 
 export const fetchOpensource = params => {return axios.get(`${host}/opensource`, params)}
 
