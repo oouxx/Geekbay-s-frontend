@@ -16,34 +16,23 @@
         />
       </el-form-item>
       <el-form-item prop="password">
-        <!-- <span class="svg-container">
-
-        </span> -->
         <el-input
           v-model="loginForm.parseWord"
           placeholder="密码"
+          type="password"
           name="password"
           auto-complete="on"
           @keyup.enter.native="handleLogin" />
       </el-form-item>
 
-      <el-button type="primary" style="width:25%;margin-bottom:24px;margin-left: 190px" @click="handleLogin">登录</el-button>
-      <el-button class="thirdparty-button" type="primary" @click="showDialog=true">第三方登录</el-button>
+      <el-button type="primary" style="width:25%;margin-bottom:24px;margin-left: 210px" @click="handleLogin">登录</el-button>
+      <el-button class="thirdparty-button" type="primary" @click="goRegister">注册</el-button>
       <el-button class="forget-passwd-button" type="primary" @click="goForgetPasswd">忘记密码</el-button>
     </el-form>
-
-    <el-dialog title="第三方登录" :visible.sync="showDialog" append-to-body>
-      第三方等登录
-      <br>
-      <br>
-      <br>
-      <social-sign />
-    </el-dialog>
 
   </div>
 </template>
 <script>
-import SocialSign from './socialsignin'
 import cookie from '../../static/js/cookie';
 import { login } from '../../api/api'
 
@@ -55,19 +44,15 @@ import { login } from '../../api/api'
           userName:'',
           parseWord:'',
           autoLogin:false,
-          error:"",
-          userNameError:'',
-          parseWordError:'',
-        },
-        showDialog: false,
+        }
       }
-    },
-    componets:{
-      'social-sign':SocialSign
     },
     methods:{
       goForgetPasswd() {
         this.$router.push({ path: '/forget-passwd' })
+      },
+      goRegister(){
+        this.$router.push({ path: '/register'})
       },
       handleLogin(){
         if(this.userName == '' || this.parseWord == ''){

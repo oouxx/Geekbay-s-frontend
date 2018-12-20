@@ -3,10 +3,10 @@
     <el-row v-for="(item,index) in list" :key="index+1">
       <el-card :body-style="{ padding: '0px' }">
         <div class="image-part">
-          <img :src="item.detail.icon" class="image">
+          <!-- <img :src="item.detail.icon" class="image"> -->
         </div>
         <div style="padding: 14px;" class="summary-part">
-          <h5><router-link :to="item.url">{{ item.title }}</router-link></h5>
+          <h5><router-link :to="'/'+item.slug+'/details/'+item.id">{{ item.title }}</router-link></h5>
         </div>
           <span type="text" class="last_time">{{ item.modify_time }}</span>
       </el-card>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-// import { homeList } from '../../api/api'
+import { homeList } from '../../api/api'
 export default {
   name: 'Index',
   data: function(){
@@ -26,16 +26,16 @@ export default {
       title: 'title',
       list: null
     }
-//   },
-//   created() {
-//     this.getHome()
-//   },
-//   methods: {
-//     getHome: function(){
-//       homeList().then(response => {
-//        this.list = response.data
-//     })
-//   }
+  },
+ created() {
+     this.getHome()
+   },
+  methods: {
+    getHome: function(){
+      homeList().then(response => {
+      this.list = response.data
+    })
+  }
  }
 }
 </script>
